@@ -1,3 +1,9 @@
+/*=================================================================================
+nextInt() of the Scanner class reads a string of digits and returns it as an int. 
+It is not affected by preceding non digit Chars and terminates after the string 
+of the digits at a white space or an end of line.
+=================================================================================*/
+
 import java.util.*;
 
 public class Solution {
