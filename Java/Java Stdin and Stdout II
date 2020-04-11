@@ -1,0 +1,43 @@
+/*======================================================================== 
+When the scanner is scanning the input it stops preceding the new line
+character. This not as much as an issue for nextInt() and nextDouble() 
+as they will ignore preceding white space and new lines. Instead this
+is a particular issue for nextLine(), which will scan the remaining new
+line character of the int and double input and stop there. This is why
+an additional nextLine() is required to clear the scanner.
+
+A better way to do it is scan the line by nextLine() and parsing the 
+int with Integer.parseInt(input.nextLine()).
+
+Sample Input:
+42
+3.1415
+Welcome to HackerRank's Java tutorials!
+Sample Output
+
+Sample Input:
+String: Welcome to HackerRank's Java tutorials!
+Double: 3.1415
+Int: 42
+
+/*========================================================================*/ 
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+
+        // Write your code here.
+        double d = scan.nextDouble();
+        
+        scan.nextLine();
+        String s = scan.nextLine();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
