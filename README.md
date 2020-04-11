@@ -1,2 +1,2 @@
 # Hackerrank
-Contains all the algorithim code completed on Hackerrank. 
+Contains all the source code completed on Hackerrank. 
