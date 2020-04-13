@@ -1,0 +1,57 @@
+
+/*======================================================================== 
+The use of nested loops is central to this challenge, the outer loop 
+facilitates the number of queries for the series (2 in this case). The
+inner loop calculates the actual series. No math.power() function
+was provided however the loop can be used to calculate the power.
+Interestingly the actual math.power() function is an O(1) algorithim
+and the source code for the implementation can be found below,\
+
+https://stackoverflow.com/questions/38236538/whats-the-algorithm-behind-math-pow-in-java
+
+A series calculation question
+
+Sample Input:
+
+2
+0 2 10
+5 3 5
+
+Sample Output:
+
+2 6 14 30 62 126 254 510 1022 2046
+8 14 26 50 98
+
+/*========================================================================*/ 
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        int s = 0;
+        int power2 = 1;
+
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            s += a;
+            for(int j = 0; j < n; j++)
+            {
+                s += power2 * b;
+                System.out.printf("%d ", s);
+                power2 *= 2;
+            }
+
+            s = 0;
+            power2 = 1;
+            System.out.println();
+        
+        }
+        in.close();
+    }
+}
